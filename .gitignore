@@ -38,3 +38,20 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# IDE configuration files
+*.gz
+*.ipc
+.idea
+.vscode
+*.iml
+*.log
+*.zip
+*.dmg
+*.out
+
+# Build files
+*.js
+*.map
+
+
