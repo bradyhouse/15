@@ -1,0 +1,40 @@
+.page {
+  background-image: url('~/images/gameboard_logo.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+actionbar{
+    background-color: black;
+    color: white;
+    font-family: Courier;
+}
+
+Image {
+    display: block;
+    margin: 0 auto;
+}
+
+stacklayout button {
+    font-size: 20vw;
+    horizontal-align: center;
+    opacity: .9;
+    border-radius: 5;
+    border-color: white;
+    border-width: 1vw;
+    background-color: transparent;
+    color: black;
+    height: 60vw;
+    width: 100%;
+    padding: 0%;
+}
+
+.hidden {
+    visibility: collapsed;
+}
+
+.show {
+    visibility: visible;
+}

@@ -1,0 +1,83 @@
+
+GridLayout {
+  background-image: url('~/images/gameboard_logo.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+actionbar {
+  background-color: black;
+  color: white;
+}
+
+button {
+  font-size: 20vw;
+  horizontal-align: center;
+  opacity: .9;
+  border-radius: 5;
+  border-color: white;
+  border-width: 1vw;
+  background-color: transparent;
+  color: black;
+  height: 60vw;
+  width: 100%;
+  padding: 0%;
+}
+
+Label {
+  font-size: 15vw;
+  text-align: left;
+  border-width: 1;
+  border-color: gray;
+
+}
+
+TextField.labelAddHighScore {
+  color: black;
+  font-size: 15vw;
+  width: 20%;
+  /*background-color: #676E5F;
+  color: white;*/
+}
+
+TextField.textFieldAddHighScore {
+  font-size: 15vw;
+  width: 80%;
+  color: blue;
+  /*background-color: white;
+  color: #676E5F;*/
+}
+
+TextField.disabled {
+  font-size: 15vw;
+  width: 80%;
+  background-color: transparent;
+  color: black;
+  /*color: #676E5F;*/
+}
+
+Button.buttonAddHighScore {
+  font-size: 15vw;
+}
+
+TextField {
+  font-size: 15vw;
+  width: 50%;
+  vertical-align: bottom;
+}
+
+GridLayout {
+  padding: 20;
+}
+
+StackLayout {
+  padding: 10;
+}
+
+StackLayout.pushRight {
+  width: 100%;
+  horizontal-align: right;
+  padding: 5;
+}

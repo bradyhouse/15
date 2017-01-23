@@ -1,0 +1,13 @@
+<ActionBar [title]="title">
+</ActionBar>
+<ScrollView #container>
+  <StackLayout style="padding: 10%;" orientation="vertical">
+    <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" horizontalAlignment="center"
+                       verticalAlignment="center"></ActivityIndicator>
+    <WrapLayout>
+      <Button text="Play" (tap)="onPlayTap()"></Button>
+      <Button text="About" [nsRouterLink]="['/about']" pageTransition="flipRight"></Button>
+      <Button text="High Scores" [nsRouterLink]="['/high-score']" pageTransition="flipRight" *ngIf="isHighScoreButton || isDev"></Button>
+    </WrapLayout>
+  </StackLayout>
+</ScrollView>

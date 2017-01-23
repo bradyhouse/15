@@ -1,0 +1,20 @@
+<ActionBar [title]="board.title">
+  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"
+                    (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+<GridLayout class="level2" rows="auto,auto,auto,auto,auto" columns="*,*,*,*">
+    <button row="0" col="0" text="reset" class="reset" (tap)="onResetTap()"></button>
+    <button row="0" col="1" *ngIf="isDev" id="nextLevel" class="reset" text="Skip Level"
+          (tap)="onSkipLevelTap()"></button>
+
+    <label  row="0" col="3" [text]="board.moves"></label>
+    <Button *ngFor="let square of board.squares"
+            [row]="square.row + 1"
+            [col]="square.col"
+            [id]="square.id"
+            [text]="square.value"
+            [class]="square.cssClass"
+            (tap)="onSquareGesture(square)"
+            (swipe)="onSquareGesture(square)"
+    ></Button>
+</GridLayout>

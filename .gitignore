@@ -28,6 +28,9 @@ build/Release
 
 # Dependency directories
 node_modules
+platforms
+hooks
+
 jspm_packages
 
 # Optional npm cache directory
