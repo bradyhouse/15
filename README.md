@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bradyhouse/15.svg?branch=master)](https://travis-ci.org/bradyhouse/15) [![Stories in Ready](https://badge.waffle.io/bradyhouse/15.svg?label=ready&title=Ready)](http://waffle.io/bradyhouse/15)
+[![Build Status](https://travis-ci.org/bradyhouse/15.svg?branch=master)](https://travis-ci.org/bradyhouse/15) [![Stories in Progress](https://badge.waffle.io/bradyhouse/15.svg?label=ready&title=Ready)](http://waffle.io/bradyhouse/15)
 
 ![Icon](https://lh3.googleusercontent.com/eAZfLewloQtzEWojBtSqBfOOW6qkxJ842AvSggUsf6eHwF5bXnsg0vGEUitY1h0JbQ=w300-rw)
 
