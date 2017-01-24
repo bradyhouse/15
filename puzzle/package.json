@@ -1,8 +1,8 @@
 {
   "description": "15 Puzzle",
-  "license": "Apache-2.0",
-  "readme": "NativeScript Application",
-  "repository": "https://github.com/bradyhouse/house",
+  "license": "MIT",
+  "readme": "NativeScript Angular 2 Application",
+  "repository": "https://github.com/bradyhouse/15",
   "nativescript": {
     "id": "org.nativescript.puzzle",
     "tns-android": {
