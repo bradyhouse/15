@@ -1,3 +1,10 @@
-language: node_js
-node_js:
-  - "6"
+language: generic
+
+sudo: false
+
+branches:
+  only:
+  - master
+
+env:
+  global:
