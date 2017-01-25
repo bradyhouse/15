@@ -10,3 +10,5 @@ branches:
 
 install: ./install.sh
 
+scripts: ./test.sh
+
