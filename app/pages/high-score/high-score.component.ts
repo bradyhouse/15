@@ -17,6 +17,7 @@ import {StateService} from '../../shared/state/state.service';
 
 @Component({
   selector: 'high-score',
+  moduleId: module.id,
   templateUrl: 'pages/high-score/high-score.component.html',
   styleUrls: ['pages/high-score/high-score-common.css', 'pages/high-score/high-score.css'],
   providers: [StateService, ScoreService]

@@ -5,7 +5,10 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "noEmitHelpers": true,
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "lib": [
+            "es2015.iterable"
+        ]
     },
     "exclude": [
         "node_modules",

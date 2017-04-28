@@ -2,8 +2,9 @@ import { Component } from "@angular/core";
 var Sqlite = require("nativescript-sqlite");
 
 @Component({
+    moduleId: module.id,
     selector: "main",
-    template: "<page-router-outlet></page-router-outlet>"
+    template: "<router-outlet></router-outlet>"
 })
 export class AppComponent {
     private database: any;

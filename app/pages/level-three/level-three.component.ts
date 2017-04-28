@@ -2,13 +2,13 @@ const Dialogs = require('ui/dialogs'),
   frame = require('ui/frame'),
   application = require('application');
 
+
 import {Component, OnInit} from '@angular/core';
 import {View} from 'ui/core/view';
 import {Router} from '@angular/router';
 import {Page} from 'ui/page';
 import {Color} from 'color';
 import {RouterExtensions} from "nativescript-angular/router";
-
 
 import {Base} from '../../base';
 import {Config} from '../../shared/config';
@@ -21,12 +21,13 @@ import {StateService} from '../../shared/state/state.service';
 
 
 @Component({
-  selector: 'level-one',
-  templateUrl: 'pages/level-one/level-one.component.html',
-  styleUrls: ['pages/level-one/level-one-common.css', 'pages/level-one/level-one.css'],
+  selector: 'level-three',
+  moduleId: module.id,
+  templateUrl: 'pages/level-three/level-three.component.html',
+  styleUrls: ['pages/level-three/level-three-common.css', 'pages/level-three/level-three.css'],
   providers: [BoardService, ScoreService, StateService]
 })
-export class LevelOneComponent extends Base implements OnInit {
+export class LevelThreeComponent extends Base implements OnInit {
 
   board: Board;
   isDev: Boolean;
@@ -55,24 +56,24 @@ export class LevelOneComponent extends Base implements OnInit {
   }
 
   ngOnInit() {
-    this.consoleLogMsg('level-one.component', 'ngOnInit');
+    this.consoleLogMsg('level-three.component', 'ngOnInit');
     this.onInit();
   }
 
   onInit(): void {
-    this.consoleLogMsg('level-one.component', 'onInitChange');
+    this.consoleLogMsg('level-three.component', 'onInitChange');
 
-    let title = Config.title + ' - Level 1';
+    let title = Config.title + ' - Level 3';
 
     if (Config.isDev) {
       title += ' (Dev Mode)';
     }
 
-    this._boardService.initBoard(3, 3, title, 1, 0, 'level-two');
+    this._boardService.initBoard(5, 5, title, 3, 0, 'level-three');
   }
 
   onGameBoardChange(board: Board) {
-    this.consoleLogMsg('level-one.component', 'onGameBoardChange');
+    this.consoleLogMsg('level-three.component', 'onGameBoardChange');
     this.board = board;
     this.isBoardLoaded = true;
     if (this._boardService.isGameOver()) {
@@ -85,12 +86,12 @@ export class LevelOneComponent extends Base implements OnInit {
   }
 
   onStateChange(state: State[]) {
-    this.consoleLogMsg('level-one.component', 'onStateChange');
+    this.consoleLogMsg('level-three.component', 'onStateChange');
     if (this.isBoardLoaded && state && state.length) {
       let levelValue: any = this._stateService.getKeyValue('level'),
         stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
         boardLevel: number = this.board && this.board.level ? this.board.level : 1;
-      if (this.isBoardLoaded && stateLevel > boardLevel) {
+      if (stateLevel > boardLevel) {
         this._router.navigate([
           'game/:target', {
             target: this.board.nextScreen
@@ -105,7 +106,7 @@ export class LevelOneComponent extends Base implements OnInit {
   }
 
   onSquareGesture(square: Square): void {
-    this.consoleLogMsg('level-one.component', 'onSquareGesture');
+    this.consoleLogMsg('level-three.component', 'onSquareGesture');
 
     let squareB: Square = this._boardService.emptySquare;
 
@@ -121,18 +122,21 @@ export class LevelOneComponent extends Base implements OnInit {
       message: 'You solved the puzzle in ' + this.board.moves + ' moves!',
       okButtonText: 'Ok'
     }).then(() => {
-      this._stateService.updateLevel(2);
+      this._router.navigate([
+        '/:target', {
+          target: this.board.nextScreen
+        }
+      ], Config.transition);
     });
   }
 
   onHighScore(): void {
+    this.consoleLogMsg('level-three.component', 'onHighScore');
     Dialogs.confirm({
       title: 'W i n n e r',
       message: 'You solved the puzzle in ' + this.board.moves + ' moves!',
       okButtonText: 'Ok'
     }).then(() => {
-      this.isBoardLoaded = false;
-      this._stateService.updateLevel(2);
       this._router.navigate([
         'add-high-score/:level:moves:caller', {
           moves: this.board.moves,
@@ -144,7 +148,7 @@ export class LevelOneComponent extends Base implements OnInit {
   }
 
   onSkipLevelTap(): void {
-    this.consoleLogMsg('level-one.component', 'onSkipLevelTap');
+    this.consoleLogMsg('level-three.component', 'onSkipLevelTap');
     this.onHighScore();
   }
 

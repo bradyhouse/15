@@ -9,6 +9,7 @@ import {Config} from '../../shared/config';
 
 @Component({
   selector: 'about',
+  moduleId: module.id,
   templateUrl: 'pages/about/about.component.html',
   styleUrls: ['pages/about/about-common.css', 'pages/about/about.css']
 })

@@ -19,6 +19,7 @@ import {ScoreService} from '../../../shared/score/score.service';
 
 @Component({
   selector: 'add-high-score',
+  moduleId: module.id,
   templateUrl: 'pages/high-score/add-high-score/add-high-score.component.html',
   styleUrls: ['pages/high-score/add-high-score/add-high-score-common.css',
     'pages/high-score/add-high-score/add-high-score.css'],

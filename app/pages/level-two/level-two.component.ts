@@ -24,6 +24,7 @@ import {StateService} from '../../shared/state/state.service';
 
 @Component({
   selector: 'level-two',
+  moduleId: module.id,
   templateUrl: 'pages/level-two/level-two.component.html',
   styleUrls: ['pages/level-two/level-two-common.css', 'pages/level-two/level-two.css'],
   providers: [BoardService, ScoreService, StateService]

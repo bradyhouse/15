@@ -17,7 +17,7 @@ export const routes = [
   {path: 'add-high-score/:level:moves:caller', component: AddHighScoreComponent}
 ];
 
-export const navigatableComponents = [
+export const navigableComponents = [
   GameComponent,
   AboutComponent,
   LevelOneComponent,

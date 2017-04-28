@@ -16,6 +16,7 @@ import {StateService} from '../../shared/state/state.service';
 
 @Component({
   selector: "game",
+  moduleId: module.id,
   templateUrl: "pages/game/game.component.html",
   providers: [StateService, ScoreService],
   styleUrls: ["pages/game/game-common.css", "pages/game/game.css"],
