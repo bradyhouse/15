@@ -2,6 +2,8 @@
 [![Stories in Progress](https://badge.waffle.io/bradyhouse/15.svg?label=in%20progress&title=Stories%20In%20Progress)](http://waffle.io/bradyhouse/15)
 [![dependencies Status](https://david-dm.org/bradyhouse/15/status.svg)](https://david-dm.org/bradyhouse/15)
 [![devDependencies Status](https://david-dm.org/bradyhouse/15/dev-status.svg)](https://david-dm.org/bradyhouse/15?type=dev)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
 
 Puzzle 15
 ======
