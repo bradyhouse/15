@@ -8,7 +8,7 @@ branches:
   only:
   - master
 
-install: ./install.sh
+install: npm install
 
-scripts: ./test.sh
+scripts: tns info
 
