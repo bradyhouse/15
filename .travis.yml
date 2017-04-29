@@ -1,14 +1,28 @@
-language: node_js
-node_js:
-  - "6"
+language:
+  - java
+  - android
+  - node_js
 
-sudo: false
+android:
+  components:
+    - build-tools-25.0.3
+    - android-25
+    - sys-img-armeabi-v7a-android-25
+
+node_js:
+  - "6.9.0"
+os:
+  - linux
+
+sudo: true
 
 branches:
   only:
   - master
 
-install: npm install
 
-scripts: tns info
+scripts:
+  - ./bin/install-tns.sh
+  - ./bin/install-android.sh
+  - ./bin/start-android.sh
 
