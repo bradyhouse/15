@@ -1,26 +1,21 @@
 const Dialogs = require('ui/dialogs'),
   frame = require('ui/frame');
 
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import {View} from 'ui/core/view';
+import { Component } from '@angular/core';
 import { RouterExtensions } from "nativescript-angular/router";
-
-import {Page} from 'ui/page';
-import {Color} from 'color';
-
-import {Base} from '../../base';
-import {Config} from '../../shared/config';
-import {Score} from '../../shared/score/score';
-import {ScoreService} from '../../shared/score/score.service';
-import {State} from '../../shared/state/State';
-import {StateService} from '../../shared/state/state.service';
+import { Page } from 'ui/page';
+import { Base } from '../../base';
+import { Config } from '../../shared/config';
+import { Score } from '../../shared/score/score';
+import { ScoreService } from '../../shared/score/score.service';
+import { StateModel } from '../../shared/state/state.model';
+import { StateService } from '../../shared/state/state.service';
 
 @Component({
   selector: 'high-score',
   moduleId: module.id,
-  templateUrl: 'pages/high-score/high-score.component.html',
-  styleUrls: ['pages/high-score/high-score-common.css', 'pages/high-score/high-score.css'],
-  providers: [StateService, ScoreService]
+  templateUrl: './high-score.component.html',
+  styleUrls: ['./high-score-common.css', './high-score.css']
 })
 export class HighScoreComponent extends Base {
   highScores: Array<Score> = [];
@@ -64,7 +59,7 @@ export class HighScoreComponent extends Base {
       ));
   }
 
-  onStateServiceDataChange(state: State[]) {
+  onStateServiceDataChange(state: StateModel[]) {
     this.consoleLogMsg('high-score.component', 'onStateServiceDataChange');
     let level: string = this._stateService.getKeyValue('level');
     this.consoleLogMsg('high-score.component', 'level = ' + level);

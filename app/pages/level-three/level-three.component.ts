@@ -3,29 +3,24 @@ const Dialogs = require('ui/dialogs'),
   application = require('application');
 
 
-import {Component, OnInit} from '@angular/core';
-import {View} from 'ui/core/view';
-import {Router} from '@angular/router';
-import {Page} from 'ui/page';
-import {Color} from 'color';
-import {RouterExtensions} from "nativescript-angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Page } from 'ui/page';
+import { RouterExtensions } from "nativescript-angular/router";
 
-import {Base} from '../../base';
-import {Config} from '../../shared/config';
-import {Board} from '../../shared/board/board';
-import {Square} from '../../shared/board/square';
-import {BoardService} from '../../shared/board/board.service';
-import {ScoreService} from '../../shared/score/score.service';
-import {State} from '../../shared/state/State';
-import {StateService} from '../../shared/state/state.service';
-
+import { Base } from '../../base';
+import { Config } from '../../shared/config';
+import { Board } from '../../shared/board/board';
+import { Square } from '../../shared/board/square';
+import { BoardService } from '../../shared/board/board.service';
+import { ScoreService } from '../../shared/score/score.service';
+import { StateModel } from '../../shared/state/state.model';
+import { StateService } from '../../shared/state/state.service';
 
 @Component({
   selector: 'level-three',
   moduleId: module.id,
-  templateUrl: 'pages/level-three/level-three.component.html',
-  styleUrls: ['pages/level-three/level-three-common.css', 'pages/level-three/level-three.css'],
-  providers: [BoardService, ScoreService, StateService]
+  templateUrl: './level-three.component.html',
+  styleUrls: ['./level-three-common.css', './level-three.css']
 })
 export class LevelThreeComponent extends Base implements OnInit {
 
@@ -85,7 +80,7 @@ export class LevelThreeComponent extends Base implements OnInit {
     }
   }
 
-  onStateChange(state: State[]) {
+  onStateChange(state: StateModel[]) {
     this.consoleLogMsg('level-three.component', 'onStateChange');
     if (this.isBoardLoaded && state && state.length) {
       let levelValue: any = this._stateService.getKeyValue('level'),

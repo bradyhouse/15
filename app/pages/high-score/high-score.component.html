@@ -10,13 +10,13 @@
   </GridLayout>
   <ScrollView dock="top">
     <ListView [items]="highScores" [class.visible]="isHighScores" dock="top">
-      <template let-item="item">
+      <ng-template let-item="item">
         <GridLayout rows="*" columns="*,*,*" dock="top">
           <Label row="0" col="0" [text]="item.user" [class]="item.cssClass"></Label>
           <Label row="0" col="1" [text]="item.moves" [class]="item.cssClass"></Label>
           <Label row="0" col="2" [text]="item.level" [class]="item.cssClass"></Label>
         </GridLayout>
-      </template>
+      </ng-template>
     </ListView>
   </ScrollView>
   <GridLayout rows="*" columns="*,*" dock="bottom">

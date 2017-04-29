@@ -1,17 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {View} from 'ui/core/view';
-import {Router} from '@angular/router';
-import {Page} from 'ui/page';
-import {Color} from 'color';
-
-import {Config} from '../../shared/config';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Page } from 'ui/page';
+import { Config } from '../../shared/config';
 
 
 @Component({
   selector: 'about',
   moduleId: module.id,
-  templateUrl: 'pages/about/about.component.html',
-  styleUrls: ['pages/about/about-common.css', 'pages/about/about.css']
+  templateUrl: './about.component.html',
+  styleUrls: ['./about-common.css', './about.css']
 })
 export class AboutComponent implements OnInit {
   title: string;

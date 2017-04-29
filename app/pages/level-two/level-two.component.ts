@@ -2,32 +2,26 @@ const Dialogs = require('ui/dialogs'),
   frame = require('ui/frame'),
   application = require('application');
 
-import {Component, OnInit} from '@angular/core';
-import {View} from 'ui/core/view';
-import {Router} from '@angular/router';
-import {Page} from 'ui/page';
-import {Color} from 'color';
-
-import {RouterExtensions} from 'nativescript-angular/router';
-import { AndroidApplication, AndroidActivityBackPressedEventData } from 'application';
+import { Component, OnInit } from '@angular/core';
+import { Page } from 'ui/page';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 
-import {Base} from '../../base';
-import {Config} from '../../shared/config';
-import {Board} from '../../shared/board/board';
-import {Square} from '../../shared/board/square';
-import {BoardService} from '../../shared/board/board.service';
-import {ScoreService} from '../../shared/score/score.service';
-import {State} from '../../shared/state/State';
-import {StateService} from '../../shared/state/state.service';
+import { Base } from '../../base';
+import { Config } from '../../shared/config';
+import { Board } from '../../shared/board/board';
+import { Square } from '../../shared/board/square';
+import { BoardService } from '../../shared/board/board.service';
+import { ScoreService } from '../../shared/score/score.service';
+import { StateModel } from '../../shared/state/state.model';
+import { StateService } from '../../shared/state/state.service';
 
 
 @Component({
   selector: 'level-two',
   moduleId: module.id,
-  templateUrl: 'pages/level-two/level-two.component.html',
-  styleUrls: ['pages/level-two/level-two-common.css', 'pages/level-two/level-two.css'],
-  providers: [BoardService, ScoreService, StateService]
+  templateUrl: './level-two.component.html',
+  styleUrls: ['./level-two-common.css', './level-two.css']
 })
 export class LevelTwoComponent extends Base implements OnInit {
 
@@ -87,7 +81,7 @@ export class LevelTwoComponent extends Base implements OnInit {
     }
   }
 
-  onStateChange(state: State[]) {
+  onStateChange(state: StateModel[]) {
     this.consoleLogMsg('level-two.component', 'onStateChange');
     if (this.isBoardLoaded && state && state.length) {
       let levelValue: any = this._stateService.getKeyValue('level'),

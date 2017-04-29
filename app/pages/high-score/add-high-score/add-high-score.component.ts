@@ -2,28 +2,26 @@ const Dialogs = require('ui/dialogs'),
   frame = require('ui/frame');
 
 
-import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
-import {RouterExtensions} from "nativescript-angular/router";
-
-import {NgModule} from "@angular/core";
-
-import {TextField} from "ui/text-field";
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RouterExtensions } from "nativescript-angular/router";
 
 
-import {Base} from '../../../base';
-import {Config} from '../../../shared/config';
-import {Score} from '../../../shared/score/score';
-import {ScoreService} from '../../../shared/score/score.service';
+import { TextField } from "ui/text-field";
+
+
+import { Base} from '../../../base';
+import { Config} from '../../../shared/config';
+import { Score} from '../../../shared/score/score';
+import { ScoreService} from '../../../shared/score/score.service';
 
 
 @Component({
   selector: 'add-high-score',
   moduleId: module.id,
-  templateUrl: 'pages/high-score/add-high-score/add-high-score.component.html',
-  styleUrls: ['pages/high-score/add-high-score/add-high-score-common.css',
-    'pages/high-score/add-high-score/add-high-score.css'],
-  providers: [ScoreService]
+  templateUrl: './add-high-score.component.html',
+  styleUrls: ['./add-high-score-common.css',
+    './add-high-score.css']
 })
 export class AddHighScoreComponent extends Base implements OnInit {
 
@@ -72,8 +70,14 @@ export class AddHighScoreComponent extends Base implements OnInit {
       return;
     }
 
-    let score: Score = new Score(this._scoreService.nextId,
-      this.name, '00:00:00', +this.moves, this.level, <string>null);
+    let score: Score = new Score(
+      this._scoreService.nextId,
+      this.name,
+      '00:00:00',
+      +this.moves,
+      this.level,
+      <string>null,
+      1);
 
     this._scoreService.insert(score);
 

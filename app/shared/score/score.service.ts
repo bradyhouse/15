@@ -1,17 +1,24 @@
-const Sqlite = require('nativescript-sqlite');
+const ScoreSql = {
+  insertHighScore: "insert into high_scores(id, user, time, moves, level) values(?,?,?,?,?)",
+  nextIdHighScore: "select seq from sqlite_sequence where name='high_scores'",
+  selectHighScore: "select * from (select id, user, time, moves, level, (moves/level) * -1 as rank from high_scores) order by rank desc",
+  selectMinHighScore: "select min(moves) as moves from high_scores where level = ",
+  dropHighScore: "drop table 'main'.'high_scores';",
+  createHighScore: "create table 'high_scores' ('id' integer primary key  autoincrement  not null  unique , 'user' text not null , 'time' text, 'moves' text, 'level' integer not null  default 1)",
+  createConfig: "create table 'config' ('id' integer primary key  autoincrement  not null  unique , 'key' text not null , 'value' text not null)"
+};
 
-import {List} from 'immutable';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {Observer}   from 'rxjs/Observer';
+import { List } from 'immutable';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Observer }   from 'rxjs/Observer';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 
 
-import {Score} from './score';
-import {ScoreSql} from './score.sql';
-import {DbBaseService} from '../db-base.service';
+import { Score } from './score';
+import { DbBaseService } from '../db-base.service';
 
 @Injectable()
 export class ScoreService extends DbBaseService {
@@ -169,9 +176,9 @@ export class ScoreService extends DbBaseService {
               item.hasOwnProperty('time') ? item.time : null,
               item.hasOwnProperty('moves') ? +(item.moves) : 0,
               item.hasOwnProperty('level') ? +(item.level) : 1,
-              item.hasOwnProperty('id') && +(item.id) % 2 === 0 ? 'highScoreEven' : 'highScoreOdd'
+              item.hasOwnProperty('id') && +(item.id) % 2 === 0 ? 'highScoreEven' : 'highScoreOdd',
+              row
             );
-            score.row = row;
             this.consoleLogRecord(index, score);
             scores.push(score);
             row++;

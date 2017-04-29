@@ -1,27 +1,20 @@
-const Dialogs = require('ui/dialogs'),
-  frame = require('ui/frame');
+const frame = require('ui/frame');
 
-import {Component, ElementRef, ViewEncapsulation, OnInit, ViewChild} from "@angular/core";
-import {View} from "ui/core/view";
-import {RouterExtensions } from "nativescript-angular/router";
-import {ActivatedRoute} from '@angular/router';
-import {Page} from "ui/page";
-import {Color} from "color";
-import {Config} from '../../shared/config';
-import {Base} from '../../base';
-import {ScoreService} from '../../shared/score/score.service';
-import {Score} from '../../shared/score/score';
-import {State} from '../../shared/state/State';
-import {StateService} from '../../shared/state/state.service';
+import { Component, ElementRef, ViewEncapsulation, OnInit, ViewChild } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular/router";
+import { ActivatedRoute } from '@angular/router';
+import { Config } from '../../shared/config';
+import { Base } from '../../base';
+import { ScoreService } from '../../shared/score/score.service';
+import { Score } from '../../shared/score/score';
+import { StateModel } from '../../shared/state/state.model';
+import { StateService } from '../../shared/state/state.service';
 
 @Component({
   selector: "game",
   moduleId: module.id,
-  templateUrl: "pages/game/game.component.html",
-  providers: [StateService, ScoreService],
-  styleUrls: ["pages/game/game-common.css", "pages/game/game.css"],
-  encapsulation: ViewEncapsulation.None
-
+  templateUrl: "./game.component.html",
+  styleUrls: ["./game-common.css", "./game.css"]
 })
 export class GameComponent extends Base implements OnInit {
   @ViewChild("container") container: ElementRef;
@@ -33,7 +26,6 @@ export class GameComponent extends Base implements OnInit {
   isLoading: Boolean;
 
   constructor(private _router: RouterExtensions,
-              private _page: Page,
               private _route: ActivatedRoute,
               private _scoreService: ScoreService,
               private _stateService: StateService) {
@@ -41,7 +33,6 @@ export class GameComponent extends Base implements OnInit {
     this.isLoading = true;
     this.isHighScoreButton = false;
     this.isDev = Config.isDev;
-    _page.className = 'page';
 
     this.subscriptions.push(_stateService.stateChange$
       .subscribe(
@@ -69,7 +60,7 @@ export class GameComponent extends Base implements OnInit {
     }
   }
 
-  onStateServiceDataChange(state: State[]) {
+  onStateServiceDataChange(state: StateModel[]) {
     this.consoleLogMsg('game.component', 'onStateServiceDataChange');
     let level: string = this._stateService.getKeyValue('level');
     this.consoleLogMsg('game.component', 'level = ' + level);

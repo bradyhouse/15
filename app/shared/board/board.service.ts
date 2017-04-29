@@ -1,14 +1,14 @@
-import {Injectable}             from '@angular/core';
-import {Observable}               from 'rxjs/Observable';
-import {Observer}                 from 'rxjs/Observer';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 
-import {Config}                   from "../config";
-import {Board}                    from "./board";
-import {Square}                   from "./square";
-import {SharedUtils}              from "../shared-utils";
+import { Config } from "../config";
+import { Board } from "./board";
+import { Square } from "./square";
+import { SharedUtils } from "../utils/shared-utils";
 
 @Injectable()
 export class BoardService {
@@ -131,11 +131,11 @@ export class BoardService {
 
   moveSquare(squareA: Square, squareB: Square) {
 
-    let newMoves:number = this._gameBoard.moves+1,
+    let newMoves: number = this._gameBoard.moves + 1,
       newGameBoard: Board = new Board(this._gameBoard.title,
-      newMoves,
-      this._gameBoard.level,
-      this._gameBoard.nextScreen);
+        newMoves,
+        this._gameBoard.level,
+        this._gameBoard.nextScreen);
 
     this._gameBoard.squares.map(function (square: Square) {
       if (square.row === squareA.row && square.col === squareA.col) {

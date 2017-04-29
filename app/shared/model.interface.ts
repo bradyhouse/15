@@ -1,7 +1,4 @@
+
 export interface ModelInterface {
-
-  toString: {
-    (): string
-  };
-
+  toString(): string;
 }

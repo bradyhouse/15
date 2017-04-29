@@ -15,18 +15,26 @@ Puzzle 15 is a game inspired by the classic [Fifteen Puzzle](http://mathworld.wo
 [![See 15 in Action on Android](http://i.imgur.com/egn1IaR.png)](https://play.google.com/store/apps/details?id=org.nativescript.puzzle&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1) [![See 15 in Action on iOS](http://i.imgur.com/QRsMRfp.png)](https://itunes.apple.com/us/app/15-puzzle/id1180443503?mt=8)
 
 
-#### Use Case
+## Use Case
 
-This app is built with the NativeScript CLI. Once you have the [CLI installed](https://docs.nativescript.org/start/quick-setup), start by cloning the repo:
+This app is built with the NativeScript CLI. Once you have the [CLI](https://docs.nativescript.org/start/quick-setup) installed, start by cloning the repo:
 
     $ git clone https://github.com/bradyhouse/15 puzzle
-    $ cd puzzle
+    $ cd puzzle/scripts
 
-From there you can use the run command to run 15 on iOS:
+To configure the app to run on iOS, run the following command from the scripts directory:
 
-    $ tns run ios
+    $ ./install-ios.sh
 
-And the same command to run 15 on Android:
+To configure the app to run on Android, run the following command from the scripts directory:
 
-    $ tns run android
+    $ ./install-android.sh
+    
+To startup the app using an android emulator, run the following command from the scripts directory:
+  
+    $ ./start-android.sh
+    
+To startup the app using an ios emulator, run the following command from the scripts directory:
+
+    $ ./start-ios.sh
 

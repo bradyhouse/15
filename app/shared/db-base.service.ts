@@ -1,14 +1,13 @@
 var Sqlite = require('nativescript-sqlite');
 
-import {Observable} from 'rxjs/Observable';
-import {Observer}   from 'rxjs/Observer';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 
-import {Config} from './config';
-import {ModelInterface} from './model.interface';
-import {Base} from '../base';
+import { Config } from './config';
+import { Base } from '../base';
 
 export class DbBaseService extends Base {
 
