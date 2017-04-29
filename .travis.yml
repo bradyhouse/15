@@ -1,10 +1,6 @@
 language:
   - java
-  - android
   - node_js
-
-jdk:
-  - oraclejdk7
 
 android:
   components:
@@ -27,5 +23,4 @@ branches:
 scripts:
   - ./bin/install-tns.sh
   - ./bin/install-android.sh
-  - ./bin/start-android.sh
 
