@@ -3,6 +3,9 @@ language:
   - android
   - node_js
 
+jdk:
+  - oraclejdk7
+
 android:
   components:
     - build-tools-25.0.3
