@@ -38,4 +38,3 @@ install:
 
 script:
     - npm run tslint
-    - tns build android
