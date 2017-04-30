@@ -1,5 +1,5 @@
 const Sqlite = require('nativescript-sqlite');
-const StateModelSql:any = {
+const StateModelSql: any = {
   insert: "insert into config(id, key, value) values(?,?,?)",
   selectAll: "select id, key, value from config",
   selectNextId: "select seq from sqlite_sequence where name='config'",
@@ -8,7 +8,6 @@ const StateModelSql:any = {
   dropTable: "drop table 'main'.'config';",
   createTable: "create table 'config' ('id' integer primary key  autoincrement  not null  unique , 'key' text not null , 'value' text not null)"
 };
-
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -19,7 +18,6 @@ import 'rxjs/add/operator/share';
 
 import { StateModel } from './state.model';
 import { DbBaseService } from '../db-base.service';
-
 
 
 @Injectable()

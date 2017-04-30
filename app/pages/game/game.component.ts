@@ -11,7 +11,7 @@ import { StateModel } from '../../shared/state/state.model';
 import { StateService } from '../../shared/state/state.service';
 
 @Component({
-  selector: "game",
+  selector: "pz-game",
   moduleId: module.id,
   templateUrl: "./game.component.html",
   styleUrls: ["./game-common.css", "./game.css"]
@@ -84,7 +84,7 @@ export class GameComponent extends Base implements OnInit {
 
   onPlayTap() {
     this.consoleLogMsg('game.component', 'onPlayTap');
-    switch(this.level) {
+    switch (this.level) {
       case 3:
         this._router.navigate(['/level-three'], Config.transition);
         break;

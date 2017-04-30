@@ -119,8 +119,8 @@ export class BoardService {
       rc: boolean = false;
     this.printSquare(0, squareA);
     this.printSquare(1, squareB);
-    if (squareA.row == squareB.row || squareA.col == squareB.col) {
-      rc = (rowDelta == 0 || rowDelta == 1) && (colDelta == 0 || colDelta == 1);
+    if (squareA.row === squareB.row || squareA.col === squareB.col) {
+      rc = (rowDelta === 0 || rowDelta === 1) && (colDelta === 0 || colDelta === 1);
     }
     return rc;
   }
@@ -184,7 +184,7 @@ export class BoardService {
           square.value,
           square.expectedValue,
           square.cssClass
-        )
+        );
         newGameBoard.squares.push(newSquare);
       }
     });

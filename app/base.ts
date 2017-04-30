@@ -1,4 +1,3 @@
-
 import {OnDestroy} from '@angular/core';
 import {ISubscription} from 'rxjs/Subscription';
 import {Config} from './shared/config';
@@ -7,7 +6,7 @@ import {ModelInterface} from './shared/model.interface';
 
 export class Base implements OnDestroy {
 
-  subscriptions:Array<ISubscription>;
+  subscriptions: Array<ISubscription>;
 
   constructor() {
     this.subscriptions = [];
@@ -17,8 +16,8 @@ export class Base implements OnDestroy {
     this.clearSubscriptions();
   }
 
-  protected clearSubscriptions():void {
-    this.subscriptions.map((subscription:ISubscription) => {
+  protected clearSubscriptions(): void {
+    this.subscriptions.map((subscription: ISubscription) => {
       subscription.unsubscribe();
     });
     this.subscriptions = [];
@@ -39,6 +38,7 @@ export class Base implements OnDestroy {
       console.log('record #' + i + ' = ' + model.toString());
     }
   }
+
   protected consoleLogArray(models: ModelInterface[]): void {
     let i: number = 0;
     if (Config.isDev === true) {

@@ -12,7 +12,7 @@ import { StateModel } from '../../shared/state/state.model';
 import { StateService } from '../../shared/state/state.service';
 
 @Component({
-  selector: 'high-score',
+  selector: 'pz-high-score',
   moduleId: module.id,
   templateUrl: './high-score.component.html',
   styleUrls: ['./high-score-common.css', './high-score.css']
@@ -80,7 +80,7 @@ export class HighScoreComponent extends Base {
     }
   }
 
-  onNextRowChange(row:number) {
+  onNextRowChange(row: number) {
     this.consoleLogMsg('high-score.component', 'onNextRowChange');
     this.lastRow = row;
   }

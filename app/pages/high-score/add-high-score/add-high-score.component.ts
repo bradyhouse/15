@@ -17,7 +17,7 @@ import { ScoreService} from '../../../shared/score/score.service';
 
 
 @Component({
-  selector: 'add-high-score',
+  selector: 'pz-add-high-score',
   moduleId: module.id,
   templateUrl: './add-high-score.component.html',
   styleUrls: ['./add-high-score-common.css',

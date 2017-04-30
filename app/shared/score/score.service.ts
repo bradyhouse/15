@@ -11,7 +11,7 @@ const ScoreSql = {
 import { List } from 'immutable';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Observer }   from 'rxjs/Observer';
+import { Observer } from 'rxjs/Observer';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
@@ -75,7 +75,7 @@ export class ScoreService extends DbBaseService {
   }
 
   set minMoves(value: number) {
-    if (this._minMoves != value) {
+    if (this._minMoves !== value) {
       this._minMoves = value;
       if (this._minMovesObserver) {
         this._minMovesObserver.next(value);
@@ -132,14 +132,14 @@ export class ScoreService extends DbBaseService {
     if (this.database) {
       this.consoleLogMsg('score.service', ScoreSql.dropHighScore);
       this.database.execSQL(ScoreSql.dropHighScore)
-        .then((err:any) => {
+        .then((err: any) => {
           if (err) {
             this.consoleLogMsg('score.service', 'ERROR: Attempt to drop the high_scores table failed.');
             return;
           }
           this.consoleLogMsg('score.service', ScoreSql.createHighScore);
           this.database.execSQL(ScoreSql.createHighScore)
-            .then((err:any) => {
+            .then((err: any) => {
               if (err) {
                 this.consoleLogMsg('score.service', 'ERROR: Attempt to create the high_scores table failed.');
                 return;

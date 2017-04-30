@@ -17,7 +17,7 @@ import { StateService } from '../../shared/state/state.service';
 
 
 @Component({
-  selector: 'level-one',
+  selector: 'pz-level-one',
   moduleId: module.id,
   templateUrl: './level-one.component.html',
   styleUrls: ['./level-one-common.css', './level-one.css']

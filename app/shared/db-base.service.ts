@@ -1,4 +1,4 @@
-var Sqlite = require('nativescript-sqlite');
+let Sqlite = require('nativescript-sqlite');
 
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';

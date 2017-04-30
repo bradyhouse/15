@@ -17,7 +17,7 @@ import { StateModel } from '../../shared/state/state.model';
 import { StateService } from '../../shared/state/state.service';
 
 @Component({
-  selector: 'level-three',
+  selector: 'pz-level-three',
   moduleId: module.id,
   templateUrl: './level-three.component.html',
   styleUrls: ['./level-three-common.css', './level-three.css']

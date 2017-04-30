@@ -5,7 +5,7 @@ import { Config } from '../../shared/config';
 
 
 @Component({
-  selector: 'about',
+  selector: 'pz-about',
   moduleId: module.id,
   templateUrl: './about.component.html',
   styleUrls: ['./about-common.css', './about.css']

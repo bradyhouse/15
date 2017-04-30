@@ -8,7 +8,8 @@ export class Score implements ModelInterface {
               public moves: number,
               public level: number,
               public cssClass: string,
-              public row: number) {}
+              public row: number) {
+  }
 
   toString(): string {
     return '{ row: ' + this.row +
@@ -17,7 +18,7 @@ export class Score implements ModelInterface {
       ', time: ' + this.time +
       ', moves: ' + this.moves +
       ', level: ' + this.level +
-      ', cssClass: ' + this.cssClass +' }';
+      ', cssClass: ' + this.cssClass + ' }';
   }
 
 }
