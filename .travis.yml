@@ -1,5 +1,5 @@
 language:
-  - java
+  - android
   - node_js
 
 android:
